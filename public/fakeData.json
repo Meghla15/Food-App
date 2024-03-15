@@ -3,6 +3,7 @@
      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
      "id": 1,
      "name": "Classic Margherita Pizza",
+     "instructions":"Top with slices of fresh mozzarella and fresh basil leaves.",
      "ingredients": [
      "Pizza dough",
      "Tomato sauce",
@@ -20,14 +21,14 @@
       "image": "https://cdn.dummyjson.com/recipe-images/7.webp",
       "id": 2,
       "name": "Tomato Basil Bruschetta",
+      "instructions":"Drizzle with balsamic glaze before serving.",
       "ingredients": [
       "Baguette, sliced",
       "Tomatoes, diced",
       "Fresh basil, chopped",
       "Garlic cloves, minced",
       "Balsamic glaze",
-      "Olive oil",
-      "Salt and pepper to taste"
+      "Olive oil"
       ],
       "prepTime": 15,
       "calories" : 500
@@ -39,14 +40,13 @@
       "image": "https://cdn.dummyjson.com/recipe-images/2.webp",
       "id": 3,
       "name": "Vegetarian Stir-Fry",
+      "instructions":"Add broccoli, carrots, and bell peppers. Cook until vegetables are tender-crisp.",
       "ingredients": [
       "Tofu, cubed",
       "Broccoli florets",
       "Carrots, sliced",
       "Bell peppers, sliced",
-      "Soy sauce",
-      "Ginger, minced",
-      "Garlic, minced"
+      "Soy sauce"
       ],
       "prepTime": 15,
       "calories" : 400
@@ -57,16 +57,14 @@
      "image": "https://cdn.dummyjson.com/recipe-images/3.webp",
      "id": 4,
      "name": "Chocolate Chip Cookies",
+     "instructions":"Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack.",
      "ingredients": [
      "All-purpose flour",
      "Butter, softened",
      "Brown sugar",
      "White sugar",
      "Eggs",
-     "Vanilla extract",
-     "Baking soda",
-     "Salt",
-     "Chocolate chips"
+     "Vanilla extract"
      ],
      
      "prepTime": 15,
@@ -77,15 +75,13 @@
      "image": "https://cdn.dummyjson.com/recipe-images/5.webp",
      "id": 5,
      "name": "Mango Salsa Chicken",
+     "instructions":"In a bowl, combine diced mango, chopped red onion, cilantro, minced jalapeño, and lime juice.",
      "ingredients": [
      "Chicken thighs",
      "Mango, diced",
      "Red onion, finely chopped",
      "Cilantro, chopped",
-     "Lime juice",
-     "Jalapeño, minced",
-     "Salt and pepper to taste",
-     "Cooked rice for serving"
+     "Lime juice"
      ],
      
      "prepTime": 15,
@@ -95,15 +91,12 @@
      "image": "https://cdn.dummyjson.com/recipe-images/6.webp",
      "id": 6,
      "name": "Quinoa Salad with Avocado",
+     "instructions":"In a large bowl, combine cooked quinoa, diced avocado, halved cherry tomatoes, diced cucumber, diced red bell pepper, and crumbled feta cheese.",
      "ingredients": [
      "Quinoa, cooked",
      "Avocado, diced",
      "Cherry tomatoes, halved",
-     "Cucumber, diced",
-     "Red bell pepper, diced",
-     "Feta cheese, crumbled",
-     "Lemon vinaigrette dressing",
-     "Salt and pepper to taste"
+     "Cucumber, diced"
      ],
      "prepTime": 20,
      "calories": 350
