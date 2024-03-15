@@ -5,9 +5,11 @@ import Header from './Header'
 import SingleFood from './SingleFood';
 
 
+
 function App() {
   const [foods, setFoods]=useState([]);
   const[cart, setCart] = useState([]);
+  
 
   useEffect(()=>{
     fetch("./fakeData.json")
@@ -21,11 +23,21 @@ function App() {
       setCart([...cart,f]);
     }
     else{
-     alert('already achi vaii')
+     return(<div className="toast">
+     <div className="alert alert-info">
+       <span>New message arrived.</span>
+     </div>
+   </div>)
     }
 
   }
-  console.log(cart)
+      
+  const handlePress =(id)=>{
+     const newCart = cart.filter(item => item.id !=id);
+     setCart(newCart)
+  }
+ 
+ 
   
 
   return (
@@ -39,17 +51,19 @@ function App() {
 
        
 
-         <div className='main-container flex lg:flex-row flex-col p-4 justify-between lg:mt-7'>
+         <div className='main-container mx-auto p-8 grid grid-cols-2 gap-4'>
+         <div className=''>
          {
             foods.map((fd)=><SingleFood 
             food={fd}
             handleClick={handleClick}></SingleFood>)
           }
+         </div>
           
           
 
-          <div className='cart-container '>
-           <h1 className='text-3xl font-bold text-center'>Want to Cook </h1>
+          <div className='cart-container mx-auto border-[1px] rounded-2xl p-6'>
+           <h1 className='text-3xl font-bold text-center'>Want to Cook : {cart.length} </h1>
            <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -57,31 +71,70 @@ function App() {
             <tr>
            <th></th>
            <th>Name</th>
-           <th>Types</th>
+           <th>Time</th>
            <th>Calories</th>
            </tr>
            </thead>
-           {
-            cart.map((item)=>{
-                 
-              <div>
-                <tbody>
+           
+             <tbody>
             {/* row 1 */}
-            <tr>
-            <th>1</th>
-           <td>{item.name}</td>
-           <td>Quality Control Specialist</td>
-           <td>Blue</td>
-            </tr>
-           </tbody>
-              </div>
           
-            })
-           }
-             
+            {
+              cart.map((item,index)=>(
+                <tr>
+                <th>{index+1}</th>
+                     <td>{item.name}</td>
+                     <td>{item.prepTime} min</td>
+                     <td>{item.calories} calories</td>
+                     <button onClick={()=>handlePress(item.id) } class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
+                     </tr>
+                     
+              )
+                
+              )
+              }
+            
+        </tbody>
         </table>
            </div>
+           <div>
+            <h1 className='text-3xl font-bold text-center mt-4'>Currently Cook : </h1>
+            <div class="overflow-x-auto">
+                  <table class="table">
+            {/* head  */}
+           <thead>
+            <tr>
+           <th></th>
+           <th>Name</th>
+           <th>Time</th>
+           <th>Calories</th>
+           </tr>
+           </thead>
+           
+             <tbody>
+            {/* row 1 */}
+          
+            {/* {
+              cart.map((item,index)=>(
+                <tr>
+                <th>{index+1}</th>
+                     <td>{item.name}</td>
+                     <td>{item.prepTime} min</td>
+                     <td>{item.calories} calories</td>
+                     
+                     </tr>
+                     
+              )
+                
+              )
+              } */}
+            
+        </tbody>
+        </table>
+           </div>
+            </div>
           </div>
+          
       </div>
 
     </div>

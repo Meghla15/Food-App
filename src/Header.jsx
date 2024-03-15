@@ -31,7 +31,9 @@ const Header = () => {
     <div class="navbar-end">
     <div className="flex gap-2">
       <div className="form-control">
-        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+     
+
+        <input type="text"  placeholder="Search Text" className="input input-bordered w-24 md:w-auto " />
       </div>
       <div className="dropdown dropdown-end">
         <div tabindex="0" role="button" className="btn btn-ghost btn-circle avatar">
