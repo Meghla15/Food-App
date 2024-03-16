@@ -31,13 +31,13 @@ function App() {
 
   }
       
-  const handlePress =(id)=>{
-     const newCart = cart.filter(item => item.id !=id);
-     setCart(newCart),
-     setPrepare(prepare)
-    //  console.log(prepare)
+  const handlePress =(x)=>{
+     const newCart = cart.filter(item => item.id !=x.id);
+     setCart(newCart);
+     setPrepare([...prepare,x]);
+     console.log(prepare)
   }
- 
+  
  
  
   
@@ -53,8 +53,8 @@ function App() {
 
        
 
-         <div className='main-container lg:flex gap-3 mx-auto p-4 '>
-         <div className=' grid lg:grid-cols-2 grid-cols-1 gap-3 '>
+         <div className='main-container lg:flex justify-between mx-auto p-4 '>
+         <div className=' grid lg:grid-cols-2 grid-cols-1 gap-4 '>
          {
             foods.map((fd)=><SingleFood 
             food={fd}
@@ -66,7 +66,7 @@ function App() {
           
 
           <div className='cart-container mx-auto border-[1px] rounded-2xl p-6'>
-           <h1 className='text-3xl font-bold text-center'>Want to Cook : {cart.length} </h1>
+           <h1 className='text-2xl font-bold text-center'>Want to Cook : {cart.length} </h1>
            <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -89,7 +89,7 @@ function App() {
                      <td>{item.name}</td>
                      <td>{item.prepTime} min</td>
                      <td>{item.calories} calories</td>
-                     <button onClick={()=>handlePress(item.id)} class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
+                     <button onClick={()=>handlePress(item)} class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
                      </tr>
                      
               )
@@ -102,7 +102,7 @@ function App() {
            </div>
            <ToastContainer />
            <div>
-            <h1 className='text-3xl font-bold text-center mt-4'>Currently Cooking :{prepare.length} </h1>
+            <h1 className='text-2xl font-bold text-center mt-4'>Currently Cooking :{prepare.length} </h1>
             <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -123,7 +123,7 @@ function App() {
                 
                 <tr>
                 <th>{index+1}</th>
-                     <td>{i.name}</td>
+                     <td>{item.name}</td>
                      <td>{item.prepTime} min</td>
                      <td>{item.calories} calories</td>
                      
