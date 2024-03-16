@@ -3,12 +3,15 @@ import './App.css'
 import Banner from './Banner'
 import Header from './Header'
 import SingleFood from './SingleFood';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function App() {
   const [foods, setFoods]=useState([]);
   const[cart, setCart] = useState([]);
+  const [prepare ,setPrepare] =useState([]);
   
 
   useEffect(()=>{
@@ -23,19 +26,18 @@ function App() {
       setCart([...cart,f]);
     }
     else{
-     return(<div className="toast">
-     <div className="alert alert-info">
-       <span>New message arrived.</span>
-     </div>
-   </div>)
+      toast("Already exist");
     }
 
   }
       
   const handlePress =(id)=>{
      const newCart = cart.filter(item => item.id !=id);
-     setCart(newCart)
+     setCart(newCart),
+     setPrepare(prepare)
+    //  console.log(prepare)
   }
+ 
  
  
   
@@ -47,16 +49,17 @@ function App() {
 
     <div className='recipes-container mx-auto'>
       <h1 className='text-3xl font-bold mt-10 text-center'>Our Recipes</h1>
-      <p className='w-2/3 mx-auto text-center mt-2 text-slate-800'>Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque.  </p>
+      <p className='w-2/3 mx-auto text-center mt-2 mb-4 text-slate-800'>Our charming eatery, nestled in the heart of Rajshahi, celebrates culinary craftsmanship. From aromatic curries to delicate pastries, each dish is a canvas of flavors. Join us for an intimate dining experience where passion meets palate.  </p>
 
        
 
-         <div className='main-container mx-auto p-8 grid grid-cols-2 gap-4'>
-         <div className=''>
+         <div className='main-container lg:flex gap-3 mx-auto p-4 '>
+         <div className=' grid lg:grid-cols-2 grid-cols-1 gap-3 '>
          {
             foods.map((fd)=><SingleFood 
             food={fd}
-            handleClick={handleClick}></SingleFood>)
+            handleClick={handleClick}
+            ></SingleFood>)
           }
          </div>
           
@@ -86,7 +89,7 @@ function App() {
                      <td>{item.name}</td>
                      <td>{item.prepTime} min</td>
                      <td>{item.calories} calories</td>
-                     <button onClick={()=>handlePress(item.id) } class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
+                     <button onClick={()=>handlePress(item.id)} class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
                      </tr>
                      
               )
@@ -97,8 +100,9 @@ function App() {
         </tbody>
         </table>
            </div>
+           <ToastContainer />
            <div>
-            <h1 className='text-3xl font-bold text-center mt-4'>Currently Cook : </h1>
+            <h1 className='text-3xl font-bold text-center mt-4'>Currently Cooking :{prepare.length} </h1>
             <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -112,13 +116,14 @@ function App() {
            </thead>
            
              <tbody>
-            {/* row 1 */}
+           
           
-            {/* {
-              cart.map((item,index)=>(
+             {
+              prepare.map((item,index)=>(
+                
                 <tr>
                 <th>{index+1}</th>
-                     <td>{item.name}</td>
+                     <td>{i.name}</td>
                      <td>{item.prepTime} min</td>
                      <td>{item.calories} calories</td>
                      
@@ -127,7 +132,7 @@ function App() {
               )
                 
               )
-              } */}
+              }
             
         </tbody>
         </table>

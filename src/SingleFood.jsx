@@ -7,7 +7,7 @@ const SingleFood = ({food,handleClick}) => {
           <div className='cards-container'>
           <div className="card w-96 bg-base-100 shadow-xl">
            <figure className="px-10 pt-10">
-            <img src={food.image} alt="" class="rounded-xl" />
+            <img src={food.image} alt="" className="rounded-xl" />
            </figure>
            <div className="card-body text-start">
             <h2 className="card-title">{food.name}</h2>
