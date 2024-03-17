@@ -10,8 +10,8 @@ const Banner = () => {
           <h1 class="mb-5 lg:text-5xl text-3xl font-bold text-white tracking-wide">Discover an exceptional cooking <br /> class tailored for you!</h1>
           <p class="mb-5 w-2/3 mx-auto">Our intimate bistro blends seasonal ingredients, innovative techniques, and warm hospitality. From farm-to-table delights to handcrafted cocktails, every visit is a culinary masterpiece</p>
           <div className=''>
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg rounded-3xl mr-8 bg-[#0BE58A]">Explore Now</button>
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg rounded-3xl bg-[#FFFFFF]">Our Feedback</button>
+          <button className="btn btn-md lg:btn-lg rounded-3xl mr-8 bg-[#0BE58A]">Explore Now</button>
+          <button className="btn btn-md lg:btn-lg rounded-3xl btn-ghost border-white text-white">Our Feedback</button>
           </div>
         </div>
       </div>

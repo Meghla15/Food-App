@@ -6,18 +6,18 @@ const SingleFood = ({food,handleClick}) => {
         <div className=''>
           <div className='cards-container'>
           <div className="card w-[360px] bg-base-100 border-[1px]">
-           <figure className="px-10 pt-10">
+           <figure className="px-6 pt-6">
             <img src={food.image} alt="" className="rounded-xl" />
            </figure>
            <div className="card-body text-start">
             <h2 className="card-title font-bold">{food.name}</h2>
-             <p>{food.instructions}</p>
+             <p className='opacity-70'>{food.instructions}</p>
              <hr className='border-[0.5px] border-slate-200 w-full ' />
-             <h1 className='text-xl font-semibold'>Ingredients : 6</h1>
+             <h1 className='text-xl font-bold'>Ingredients : 6</h1>
                
-             <ul>
+             <ul className='list-disc pl-3'>
               {food.ingredients.map((ingredient, index) => (
-               <li key={index}> {ingredient}</li>
+               <li className='opacity-70' key={index}> {ingredient}</li>
                 ))}
               </ul>
              <hr className='border-[0.5px] border-slate-200 w-full ' />

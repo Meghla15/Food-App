@@ -5,6 +5,7 @@ import Header from './Header'
 import SingleFood from './SingleFood';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Footer';
 
 
 
@@ -48,7 +49,7 @@ function App() {
     <Banner></Banner>
 
     <div className='recipes-container mx-auto'>
-      <h1 className='text-3xl font-bold mt-10 text-center'>Our Recipes</h1>
+      <h1 className='text-4xl font-bold mt-10 text-center mb-4'>Our Recipes</h1>
       <p className='w-2/3 mx-auto text-center mt-2 mb-4 text-slate-800'>Our charming eatery, nestled in the heart of Rajshahi, celebrates culinary craftsmanship. From aromatic curries to delicate pastries, each dish is a canvas of flavors. Join us for an intimate dining experience where passion meets palate.  </p>
 
        
@@ -65,8 +66,9 @@ function App() {
           
           
 
-          <div className='cart-container mx-auto border-[1px] rounded-2xl p-6'>
-           <h1 className='text-2xl font-bold text-center'>Want to Cook : {cart.length} </h1>
+          <div className='cart-container mx-auto lg:mt-0 mt-5 border-[1px] rounded-2xl p-4'>
+           <h1 className='text-2xl font-bold text-center mb-3'>Want to Cook : {cart.length} </h1>
+           <hr className='border-[1px] border-slate-100 w-2/3 mx-auto ' />
            <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -79,7 +81,7 @@ function App() {
            </tr>
            </thead>
            
-             <tbody>
+             <tbody className='bg-slate-100'>
             {/* row 1 */}
           
             {
@@ -89,7 +91,7 @@ function App() {
                      <td>{item.name}</td>
                      <td>{item.prepTime} min</td>
                      <td>{item.calories} calories</td>
-                     <button onClick={()=>handlePress(item)} class="btn bg-[#0BE58A] rounded-badge">Preparing</button>
+                     <button onClick={()=>handlePress(item)} className="btn bg-[#0BE58A] rounded-badge">Preparing</button>
                      </tr>
                      
               )
@@ -102,7 +104,8 @@ function App() {
            </div>
            <ToastContainer />
            <div>
-            <h1 className='text-2xl font-bold text-center mt-4'>Currently Cooking :{prepare.length} </h1>
+            <h1 className='text-2xl font-bold text-center mt-4 mb-3'>Currently Cooking :{prepare.length} </h1>
+            <hr className='border-[1px] border-slate-100 w-2/3 mx-auto ' />
             <div class="overflow-x-auto">
                   <table class="table">
             {/* head  */}
@@ -115,7 +118,7 @@ function App() {
            </tr>
            </thead>
            
-             <tbody>
+             <tbody className='bg-slate-100'>
            
           
              {
@@ -143,6 +146,7 @@ function App() {
       </div>
 
     </div>
+    <Footer></Footer>
     </>
   )
 }
